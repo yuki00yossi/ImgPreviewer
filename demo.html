@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ImagePreviewer Demo</title>
+        <style>
+            #preview {
+                width: 450px;
+                height: 230px;
+                overflow: hidden;
+                padding: 0;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5), 0 1px 2px -1px rgba(0, 0, 0, .5);
+            }
+
+            input {
+                margin-top: 25px;
+            }
+
+            .icon {
+                max-width: 450px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Image Previewer Demo</h1>
+
+        <div>
+            <h2>Preview</h2>
+            <!-- プレビュー表示用 -->
+            <div id="preview"></div>
+        </div>
+
+        <!-- ファイルインプットタグ -->
+        <input type="file" data-target-id="preview" data-classes="icon" onchange="previewer.setImgPreview(event);">
+
+        <!-- JSファイル読み込み -->
+        <script src="./imgPreviewer.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/gh/yuki00yossi/js/tree/main/imgPreviewer"></script> -->
+        <script>
+            // インスタンス化
+            const previewer = new ImgPreviewer();
+        </script>
+    </body>
+</html>
